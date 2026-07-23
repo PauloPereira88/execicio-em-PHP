@@ -2,19 +2,21 @@
 
 require 'db.php';
 
-class Moto {
+class Onibus {
     public int $id;
+    public string $tipo;
     public string $marca;
     public string $modelo;
-    public string $placa;
+    public string $lugares;
 
     public function cadastrar() {
-        $db = new Database('moto');
+        $db = new Database('onibus');
 
         $res = $db->insert([
+            "tipo" => $this->tipo,
             "marca" => $this->marca,
             "modelo" => $this->modelo,
-            "placa" => $this->placa
+            "lugares" => $this->lugares
         ]);
 
         return $res;
