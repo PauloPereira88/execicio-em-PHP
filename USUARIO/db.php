@@ -54,6 +54,16 @@ class Database {
             echo "</pre>";
         }
     }
+
+    public function select($fields = "*"){
+        try {
+            $query = "SELECT " . $fields . " FROM " . $this->table . ";";
+
+            return $this->execute($query);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
 }
 
 ?>

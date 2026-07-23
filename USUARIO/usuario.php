@@ -19,6 +19,16 @@ class Usuario {
 
         return $res;
     }
+
+    public function buscar(){
+        $db = new Database('usuario');
+
+        $stmt = $db->select();
+
+        $res = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        return $res;
+    }
 }
 
 ?>
