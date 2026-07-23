@@ -14,10 +14,16 @@
             <a href="../CARRO/index.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="../index1.php"><span>MOTO</span></a>
+            <a href="../MOTO/index1.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
             <a href="index2.php"><span>Tipo</span></a>
+        </div>
+        <div class="usuario">
+            <a href="../USUARIO/index3.php"><span>Usuario</span></a>
+        </div>
+        <div class="animal">
+            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
         </div>
     </div>
 
@@ -31,10 +37,10 @@
             </select>
 
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca da Moto">
+            <input type="text" name="marca" placeholder="Marca do veiculo">
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo da Moto">
+            <input type="text" name="modelo" placeholder="Modelo do veiculo">
 
             <label for="lugares">Lugares:</label>
             <input type="number" name="lugares" placeholder="Quantidade de Lugares">

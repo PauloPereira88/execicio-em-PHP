@@ -10,7 +10,7 @@ class Onibus {
     public string $lugares;
 
     public function cadastrar() {
-        $db = new Database('onibus');
+        $db = new Database('tipo');
 
         $res = $db->insert([
             "tipo" => $this->tipo,

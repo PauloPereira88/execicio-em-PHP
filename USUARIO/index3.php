@@ -8,19 +8,19 @@
 </head>
 <body>
 
-    <h1>Cadastro de MOTO</h1>
+    <h1>Cadastro de USUARIOS</h1>
     <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="index1.php"><span>MOTO</span></a>
+            <a href="../MOTO/index1.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
             <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
-            <a href="../USUARIO/index3.php"><span>Usuario</span></a>
+            <a href="index3.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
             <a href="../ANIMAL/index4.php"><span>Animal</span></a>
@@ -29,16 +29,18 @@
 
     <div class="formulario">
         <form id="FormCadastro">
-            <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca da Moto">
 
-            <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo da Moto">
+            <label for="marca">Nome:</label>
+            <input type="text" name="nome" placeholder="Nome Usuario">
 
-            <label for="placa">Placa:</label>
-            <input type="text" name="placa" placeholder="placa da Moto">
+            <label for="modelo">Cidade:</label>
+            <input type="text" name="cidade" placeholder="Cidade do Usuario">
+
+            <label for="lugares">Telefone:</label>
+            <input type="text" name="telefone" placeholder="Telefone do Usuario">
 
             <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+
         </form>
     </div>
     

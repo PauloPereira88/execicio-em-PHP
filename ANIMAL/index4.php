@@ -8,13 +8,13 @@
 </head>
 <body>
 
-    <h1>Cadastro de MOTO</h1>
+    <h1>Cadastro de ANIMAIS</h1>
     <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="index1.php"><span>MOTO</span></a>
+            <a href="../MOTO/index1.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
             <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
@@ -23,20 +23,20 @@
             <a href="../USUARIO/index3.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
-            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
+            <a href="index4.php"><span>Animal</span></a>
         </div>
     </div>
 
     <div class="formulario">
         <form id="FormCadastro">
-            <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca da Moto">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" placeholder="Nome do Animal" require>
 
-            <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo da Moto">
+            <label for="raca">Raça:</label>
+            <input type="text" name="raca" placeholder="Raça do Animal" require>
 
-            <label for="placa">Placa:</label>
-            <input type="text" name="placa" placeholder="placa da Moto">
+            <label for="cor">Cor:</label>
+            <input type="text" name="cor" placeholder="Cor do Animal" require>
 
             <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
         </form>

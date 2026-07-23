@@ -71,6 +71,38 @@ body {
     padding: 12px;
 }
 
+.usuario {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 251, 0, 0.315);
+}
+
+.usuario:hover {
+    background-color: rgba(255, 251, 0, 0.644);
+}
+
+.usuario a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.animal {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgba(243, 1, 1, 0.904);
+}
+
+.animal:hover {
+    background-color: rgba(255, 0, 0, 0.418);
+}
+
+.animal a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
 form select {
     margin-bottom: 8px;
     border: 1px solid #ccc;

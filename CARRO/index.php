@@ -16,6 +16,15 @@
         <div class="moto">
             <a href="../MOTO/index1.php"><span>MOTO</span></a>
         </div>
+        <div class="tipo">
+            <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
+        </div>
+        <div class="usuario">
+            <a href="../USUARIO/index3.php"><span>Usuario</span></a>
+        </div>
+        <div class="animal">
+            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
+        </div>
     </div>
 
     <div class="formulario">

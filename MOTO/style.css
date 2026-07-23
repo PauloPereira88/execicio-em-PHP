@@ -55,6 +55,61 @@ body {
     padding: 12px;
 }
 
+.tipo {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgba(38, 0, 255, 0.315);
+}
+
+.tipo:hover {
+    background-color: rgba(38, 0, 255, 0.466);
+}
+
+.tipo a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.usuario {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgba(255, 251, 0, 0.315);
+}
+
+.usuario:hover {
+    background-color: rgba(255, 251, 0, 0.644);
+}
+
+.usuario a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
+.animal {
+    margin-bottom: 5px;
+    border-radius: 6px;
+    background-color: rgba(243, 1, 1, 0.904);
+}
+
+.animal:hover {
+    background-color: rgba(255, 0, 0, 0.418);
+}
+
+.animal a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px;
+}
+
+form select {
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 6px;
+}
+
 h1 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 35px;
