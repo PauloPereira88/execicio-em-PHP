@@ -21,11 +21,11 @@ body {
 .carro {
     margin-bottom: 5px;
     border-radius: 6px;
-    background-color: rgba(255, 0, 0, 0.315);
+    background-color: rgb(48, 170, 0);
 }
 
 .carro:hover {
-    background-color: rgba(60, 255, 0, 0.315);
+    background-color: rgb(38, 134, 0);
 }
 
 .carro a {
@@ -42,11 +42,11 @@ body {
 .moto {
     margin-bottom: 5px;
     border-radius: 6px;
-    background-color: rgba(60, 255, 0, 0.315);
+    background-color: rgb(48, 170, 0);
 }
 
 .moto:hover {
-    background-color: rgba(255, 0, 0, 0.315);
+    background-color: rgb(38, 134, 0);
 }
 
 .moto a {
@@ -58,11 +58,11 @@ body {
 .tipo {
     margin-bottom: 5px;
     border-radius: 6px;
-    background-color: rgba(38, 0, 255, 0.315);
+    background-color: rgb(48, 170, 0);
 }
 
 .tipo:hover {
-    background-color: rgba(38, 0, 255, 0.466);
+    background-color: rgb(38, 134, 0);
 }
 
 .tipo a {
@@ -74,11 +74,11 @@ body {
 .usuario {
     margin-bottom: 5px;
     border-radius: 6px;
-    background-color: rgba(255, 251, 0, 0.315);
+    background-color: rgb(48, 170, 0);
 }
 
 .usuario:hover {
-    background-color: rgba(255, 251, 0, 0.644);
+    background-color: rgb(38, 134, 0);
 }
 
 .usuario a {
@@ -90,11 +90,11 @@ body {
 .animal {
     margin-bottom: 5px;
     border-radius: 6px;
-    background-color: rgba(243, 1, 1, 0.904);
+    background-color: rgb(48, 170, 0);
 }
 
 .animal:hover {
-    background-color: rgba(255, 0, 0, 0.418);
+    background-color: rgb(38, 134, 0);
 }
 
 .animal a {
