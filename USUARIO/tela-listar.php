@@ -7,8 +7,8 @@
 </head>
 <body>
 
-<div id="listar-usuarios">
-    <?php include 'listar.php'; ?>
+<div id="listarUsuarios">
+    <?php include 'listar-usuario.php'; ?>
 </div>
 
 <script src="carregarListagem.js"></script>
