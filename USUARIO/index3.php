@@ -39,7 +39,10 @@
             <label for="lugares">Telefone:</label>
             <input type="text" name="telefone" placeholder="Telefone do Usuario">
 
-            <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+            <div class="butons">
+                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="reset">LIMPAR</button>
+            </div>
 
         </form>
     </div>

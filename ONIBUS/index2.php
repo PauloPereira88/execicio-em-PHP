@@ -45,7 +45,10 @@
             <label for="lugares">Lugares:</label>
             <input type="number" name="lugares" placeholder="Quantidade de Lugares">
 
-            <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+            <div class="butons">
+                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="reset">LIMPAR</button>
+            </div>
         </form>
     </div>
     
