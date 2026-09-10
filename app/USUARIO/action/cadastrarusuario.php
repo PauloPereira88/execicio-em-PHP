@@ -1,6 +1,6 @@
 <?php
 
-require 'usuario.php';
+require '../controller/Usuario.php';
 
 header('Content-Type: application/json');
 
@@ -9,12 +9,12 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $cidade = $_POST['cidade'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
 
-    $objusuario = new usuario();
-    $objusuario->nome = $nome;
-    $objusuario->cidade = $cidade;
-    $objusuario->telefone = $telefone;
+    $objUsuario = new usuario();
+    $objUsuario->nome = $nome;
+    $objUsuario->cidade = $cidade;
+    $objUsuario->telefone = $telefone;
 
-    $res = $objusuario->cadastrar();
+    $res = $objUsuario->cadastrar();
 
     echo json_encode([
         'sucess' => $res,
