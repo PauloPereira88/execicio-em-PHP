@@ -4,7 +4,7 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
     const formData = new FormData(this);
 
     try {
-        const response = await fetch('cadastrarusuario.php', {
+        const response = await fetch('../../action/cadastrarusuario.php', {
             method: 'POST',
             body: formData
         });

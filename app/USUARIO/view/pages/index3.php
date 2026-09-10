@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../../CSS/style.css">
     <title>Cadastro de Veiculo</title>
 </head>
 <body>
@@ -42,11 +42,14 @@
             <div class="butons">
                 <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
+                <div>
+                    <a href="./tela-listar.php">LISTAR</a>
+                </div>
             </div>
 
         </form>
     </div>
     
-    <script src="cadastro.js"></script>
+    <script src="../../JS/cadastro.js"></script>
 </body>
 </html>
