@@ -38,7 +38,10 @@
             <label for="placa">Placa:</label>
             <input type="text" name="placa" placeholder="placa da Moto">
 
-            <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+            <div class="butons">
+                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="reset">LIMPAR</button>
+            </div>
         </form>
     </div>
     

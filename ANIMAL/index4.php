@@ -38,7 +38,10 @@
             <label for="cor">Cor:</label>
             <input type="text" name="cor" placeholder="Cor do Animal" require>
 
-            <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+            <div class="butons">
+                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="reset">LIMPAR</button>
+            </div>
         </form>
     </div>
     
