@@ -25,6 +25,8 @@ class Usuario {
 
         $stmt = $db->select();
 
+        // return $stmt;
+
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }

@@ -20,7 +20,7 @@ class Database {
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\Throwable $th) {
             error_log($th->getMessage());
-            die("Erro ao Conectar ao Banco de Dados!")
+            die("Erro ao Conectar ao Banco de Dados!");
         }
     }
 
@@ -51,11 +51,12 @@ class Database {
         }
     }
 
-    public function select($fields = '*'){
+    public function select($fields='*'){
         
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
         $res = $this->execute($query);
 
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
         return $res;
     }   
     

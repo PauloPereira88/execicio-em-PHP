@@ -1,10 +1,15 @@
 async function carregarListagem() {
     try {
-        const resposta = await fetch('tela-listar.php');
+        const resposta = await fetch('../../action/listagem-usuario.php');
         const usuarios = await resposta.json();
 
-        const bodyTable = document.getElementById('bodyTable');
+        const bodyTable = document.getElementById("bodyTable");
         bodyTable.innerHTML = "";
+
+        if (usuarios.length === 0) {
+            bodyTable.innerHTML = '<p> Nenhum Usuario Cadastrado!</p>';
+            return;
+        }
 
         usuarios.forEach((usuario) => {
             const tr = document.createElement("tr");
@@ -27,10 +32,10 @@ async function carregarListagem() {
         });
 
     } catch (error) {
-        console.error('Erro ao Carregar lista', error);
-        document.getElementById('listar-usuarios').innerHTML = 
-        '<p>Erro ao carregar usuarios.</p>';
+        console.error("Erro ao Carregar lista:", error);
+        // document.getElementById('listagem-usuario').innerHTML = 
+        // '<p>Erro ao carregar usuarios.</p>';
     }
 }
 
-window.addEventListener("DOMContentLoaded", carregarListagem)
+window.addEventListener("DOMContentLoaded", carregarListagem);
