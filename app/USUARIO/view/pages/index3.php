@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../CSS/style.css">
-    <title>Cadastro de Veiculo</title>
+    <title>Cadastro de Usuarios</title>
 </head>
 <body>
 
-    <h1>Cadastro de USUARIOS</h1>
+    <h1>Cadastro de Usuarios</h1>
     <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>
@@ -30,18 +30,19 @@
     <div class="formulario">
         <form id="FormCadastro">
 
-            <label for="marca">Nome:</label>
-            <input type="text" name="nome" placeholder="Nome Usuario">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Nome Usuario">
 
-            <label for="modelo">Cidade:</label>
-            <input type="text" name="cidade" placeholder="Cidade do Usuario">
+            <label for="cidade">Cidade:</label>
+            <input type="text" id="cidade" name="cidade" placeholder="Cidade do Usuario">
 
-            <label for="lugares">Telefone:</label>
-            <input type="text" name="telefone" placeholder="Telefone do Usuario">
+            <label for="telefone">Telefone:</label>
+            <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario">
 
             <div class="butons">
-                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
+                <a href="./tela-listar.php">LISTAR</a>
             </div>
 
         </form>

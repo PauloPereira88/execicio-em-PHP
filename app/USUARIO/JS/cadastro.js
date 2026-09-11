@@ -11,8 +11,13 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
 
         const resultado = await response.json();
         alert(resultado.message);
+
+        if (resultado.status === 'success') {
+            this.reset();
+        }
+
     } catch (error) {
         alert ("Erro na Requisicao");
         console.log(error);
     }
-})
+});

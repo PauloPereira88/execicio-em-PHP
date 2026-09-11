@@ -3,7 +3,7 @@
 class Database {
     private $conn;
     private string $host = 'localhost';
-    private string $db = 'veiculo';
+    private string $db = 'cadastros';
     private string $user = 'root';
     private string $pass = '';
     private $table;
@@ -19,9 +19,8 @@ class Database {
 
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (\Throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+            error_log($th->getMessage());
+            die("Erro ao Conectar ao Banco de Dados!")
         }
     }
 
@@ -31,10 +30,9 @@ class Database {
             $stmt->execute($binds);
 
             return $stmt;
-        } catch (\throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+        } catch (\Throwable $th) {
+            error_log($th->getMessage());
+            return null;
         }
     }
 
@@ -43,12 +41,12 @@ class Database {
             $fields = array_keys($values);
             $params = array_pad([], count($fields), '?');
 
-            $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ' ) VALUES ( ' . implode(',', $binds) . ' )';
+            $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ' ) VALUES ( ' . implode(',', $params) . ')';
 
             $res = $this->execute($query, array_values($values));
 
             return $res ? true : false;
-        } catch (\throwable $th) {
+        } catch (\Throwable $th) {
             return false;
         }
     }
@@ -58,7 +56,7 @@ class Database {
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
         $res = $this->execute($query);
 
-        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
+        return $res;
     }   
     
     public function select_one_with_where($where = "", $fields = "*"){
@@ -67,8 +65,8 @@ class Database {
             $query .= " WHERE {$where}";
         }
         $query .= ";";
-        $stmt = $this->conn->query($query);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt = $this->execute($query, $binds);
+        return $stmt ? $stmt->fetch(PDO::FETCH_ASSOC) : false;
     }
 
     public function select_all_with_where($where = "", $fields = "*"){
@@ -78,13 +76,30 @@ class Database {
                 $query .= " WHERE {$where}";
             }
             $query .= ";";
-            $stmt = $this->conn->query($query);
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (\throwable $th) {
+            $stmt = $this->execute($query, $binds);
+            return $stmt ? $stmt->fetchAll(PDO::FETCH_ASSOC) : [];
+        } catch (\Throwable $th) {
             throw $th;
         }
     }
+
+    public function update($data){
         
+        $id = array_shift($data);
+        
+        $fields = array_keys($data);
+
+        $setClause = implode('=?, ', $fields) . '=?';
+
+        $query = "UPDATE " . $this->table . " SET " . $setClause . " WHERE id_" . $this->table . " = ?";
+
+        $binds = array_values($data);
+        $binds[] = $id; 
+
+        $res = $this->execute($query, $binds);
+        
+        return $res ? true : false;
+    }
     
 }
 

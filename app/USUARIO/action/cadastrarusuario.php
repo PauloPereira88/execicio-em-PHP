@@ -9,7 +9,7 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $cidade = $_POST['cidade'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
 
-    $objUsuario = new usuario();
+    $objUsuario = new Usuario();
     $objUsuario->nome = $nome;
     $objUsuario->cidade = $cidade;
     $objUsuario->telefone = $telefone;
@@ -17,7 +17,7 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $res = $objUsuario->cadastrar();
 
     echo json_encode([
-        'sucess' => $res,
+        'success' => $res,
         'message' => $res ? 'Cadastrado com Sucesso!' : 'Não Cadastrado!'
     ]);
 
