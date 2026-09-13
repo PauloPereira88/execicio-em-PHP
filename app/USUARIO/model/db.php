@@ -54,13 +54,10 @@ class Database {
     public function select($fields='*'){
         
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
-        $res = $this->execute($query);
-
-        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
-        return $res;
+        return $this->execute($query);
     }   
     
-    public function select_one_with_where($where = "", $fields = "*"){
+    public function select_one_with_where($where = "", $binds = [], $fields = "*"){
         $query = "SELECT {$fields} FROM {$this->table}";
         if (!empty($where)) {
             $query .= " WHERE {$where}";
@@ -70,7 +67,7 @@ class Database {
         return $stmt ? $stmt->fetch(PDO::FETCH_ASSOC) : false;
     }
 
-    public function select_all_with_where($where = "", $fields = "*"){
+    public function select_all_with_where($where = "", $binds = [], $fields = "*"){
         try {
             $query = "SELECT {$fields} FROM {$this->table}";
             if (!empty($where)) {
@@ -100,6 +97,21 @@ class Database {
         $res = $this->execute($query, $binds);
         
         return $res ? true : false;
+    }
+
+    public function delete($id_tratado) {
+        try {
+            $query = "DELETE FROM " . $this->table . " WHERE " . $id_tratado;
+            $res = $this->execute($query);
+
+            if ($res)  {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            return false;
+        }
     }
     
 }

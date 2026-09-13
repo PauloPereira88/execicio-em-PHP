@@ -2,6 +2,7 @@ async function carregarListagem() {
     try {
         const resposta = await fetch('../../action/listagem-usuario.php');
         const usuarios = await resposta.json();
+        // console.log(usuario);
 
         const bodyTable = document.getElementById("bodyTable");
         bodyTable.innerHTML = "";
@@ -16,13 +17,15 @@ async function carregarListagem() {
 
             tr.innerHTML = `
                 <td>${usuario.nome}</td>
-                <td>${usuario.cidade}<?td>
-                <td>${usuario.telefone}<?td>
+                <td>${usuario.cidade}</td>
+                <td>${usuario.telefone}</td>
                 <td>
                     <div>
-                        <a href="editar-usuario.php?id=${usuario.id_usuario}">
-                            <i class="bi bi-pencil-square"
-                            title="Editar"></i>
+                        <a href="editar-usuario.php?id_usuario=${usuario.id_usuario}">
+                            EDITAR
+                        </a>
+                        <a href="excluir-usuario.php?id_usuario=${usuario.id_usuario}">
+                            EXCLUIR
                         </a>
                     </div>
                 </td>
@@ -32,7 +35,7 @@ async function carregarListagem() {
         });
 
     } catch (error) {
-        console.error("Erro ao Carregar lista:", error);
+        // console.error("Erro ao Carregar lista:", error);
         // document.getElementById('listagem-usuario').innerHTML = 
         // '<p>Erro ao carregar usuarios.</p>';
     }
