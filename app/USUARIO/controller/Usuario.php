@@ -43,15 +43,14 @@ class Usuario {
     }
 
     public function editar(){
-        $db = new Database($this->table_name);
+        $db = new Database('usuario');
 
         $res = $db->update([
-                "nome" => $this->nome,
-                "cidade" => $this->cidade,
-                "telefone" => $this->telefone
-            ],
-            "id_usuario = " . (int)$this->id_usuario
-        );
+            "id_usuario" => $this->id_usuario,
+            "nome" => $this->nome,
+            "cidade" => $this->cidade,
+            "telefone" => $this->telefone
+        ]);
 
         return $res;
 
@@ -60,13 +59,13 @@ class Usuario {
     public function editar_por_id($id_user) {
         $db = new Database('usuario');
 
-        return $this->buscar_por_id($id_user);
+        return $db->select_all_with_where("id = ?", [$id_user]);
     }
 
-    public function delete() {
+    public function delete($id_user) {
         $db = new Database($this->table_name);
 
-        return $db->delete_with_where("id_usuario = ?", [$this->id_usuario]);
+        return $db->delete("id = ?", [$id_user]);
     }
 
 }

@@ -89,7 +89,7 @@ class Database {
 
         $setClause = implode('=?, ', $fields) . '=?';
 
-        $query = "UPDATE " . $this->table . " SET " . $setClause . " WHERE id_" . $this->table . " = ?";
+        $query = "UPDATE " . $this->table . ' SET ' . $setClause . ' WHERE id_' . $this->table . ' = ?';
 
         $binds = array_values($data);
         $binds[] = $id; 
@@ -99,10 +99,10 @@ class Database {
         return $res ? true : false;
     }
 
-    public function delete($id_tratado) {
+    public function delete($where, $binds = []) {
         try {
-            $query = "DELETE FROM " . $this->table . " WHERE " . $id_tratado;
-            $res = $this->execute($query);
+            $query = "DELETE FROM " . $this->table . " WHERE " . $where;
+            $res = $this->execute($query, $binds);
 
             if ($res)  {
                 return true;

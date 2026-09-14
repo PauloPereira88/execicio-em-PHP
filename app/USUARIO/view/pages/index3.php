@@ -42,7 +42,9 @@
             <div class="butons">
                 <button type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
-                <a href="./tela-listar.php">LISTAR</a>
+                <div class="listar">
+                    <a href="./tela-listar.php">LISTAR</a>
+                </div>
             </div>
 
         </form>

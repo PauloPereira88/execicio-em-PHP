@@ -16,15 +16,16 @@ async function carregarListagem() {
             const tr = document.createElement("tr");
 
             tr.innerHTML = `
+                <td>${usuario.id}</td>
                 <td>${usuario.nome}</td>
                 <td>${usuario.cidade}</td>
                 <td>${usuario.telefone}</td>
                 <td>
                     <div>
-                        <a href="editar-usuario.php?id_usuario=${usuario.id_usuario}">
+                        <a href="editar-usuario.php?id_usuario=${usuario.id}">
                             EDITAR
                         </a>
-                        <a href="excluir-usuario.php?id_usuario=${usuario.id_usuario}">
+                        <a href="../../action/excluir-usuario.php?id_usuario=${usuario.id}">
                             EXCLUIR
                         </a>
                     </div>

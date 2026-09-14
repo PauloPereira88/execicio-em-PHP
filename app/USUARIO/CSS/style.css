@@ -154,3 +154,18 @@ form button:hover {
     display: flex;
     justify-content: space-around;
 }
+
+.listar {
+    padding: 6px;
+    border: none;
+    border-radius: 6px;
+    background-color: rgb(0, 163, 0);
+}
+
+.listar a {
+    color: #fff;
+}
+
+.listar:hover {
+    background-color: rgb(0, 119, 0);
+}

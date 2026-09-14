@@ -40,9 +40,9 @@
             <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario">
 
             <div class="butons">
-                <button type="submit" id="salvar" name="salvar">ENVIAR</button>
+                <button type="submit" id="salvar" name="salvar">SALVAR</button>
                 <button type="reset">LIMPAR</button>
-                <a href="./tela-listar.php">LISTAR</a>
+                <button href="../../tela-listar.php">LISTAR</button>
             </div>
 
         </form>
