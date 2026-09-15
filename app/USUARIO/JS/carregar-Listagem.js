@@ -1,6 +1,6 @@
 async function carregarListagem() {
     try {
-        const resposta = await fetch('../../action/listagem-usuario.php');
+        const resposta = await fetch('../action/listagem-usuario.php');
         const usuarios = await resposta.json();
         // console.log(usuario);
 
@@ -25,7 +25,7 @@ async function carregarListagem() {
                         <a href="editar-usuario.php?id_usuario=${usuario.id}">
                             EDITAR
                         </a>
-                        <a href="../../action/excluir-usuario.php?id_usuario=${usuario.id}">
+                        <a href="../action/excluir-usuario.php?id_usuario=${usuario.id}">
                             EXCLUIR
                         </a>
                     </div>

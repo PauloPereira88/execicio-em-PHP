@@ -31,6 +31,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Nome</th>
                         <th>Cidade</th>
                         <th>Telefone</th>
@@ -44,7 +45,7 @@
         </div>
     </section>
 
-    <script src="../../JS/carregar-Listagem.js"></script>
+    <script src="../JS/carregar-Listagem.js"></script>
     
 </body>
 </html>

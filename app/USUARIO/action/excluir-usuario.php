@@ -10,11 +10,11 @@ $dados = $objUser->delete($id_usuario);
 
 if ($dados) {
     echo "<script>alert('Usuário deletado com sucesso!');</script>";
-    header("Location: ../view/pages/tela-listar.php");
+    header("Location: ../view/tela-listar.php");
     exit;
 } else {
     echo "<script>alert('Usuário não deletado!');</script>";
-    header("Location: ../view/pages/tela-listar.php");
+    header("Location: ../view/tela-listar.php");
     exit;
 }
 ?>

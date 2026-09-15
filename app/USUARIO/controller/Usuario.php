@@ -38,7 +38,7 @@ class Usuario {
     public function buscar_por_id($id_sessao){
         $db = new Database($this->table_name);
 
-        return $db->select_all_with_where("id_usuario = ?", [$id_sessao]);
+        return $db->select_one_with_where("id_usuario = ?", [$id_sessao]);
 
     }
 
@@ -59,7 +59,7 @@ class Usuario {
     public function editar_por_id($id_user) {
         $db = new Database('usuario');
 
-        return $db->select_all_with_where("id = ?", [$id_user]);
+        return $db->select_one_with_where("id_usuario = ?", [$id_user]);
     }
 
     public function delete($id_user) {

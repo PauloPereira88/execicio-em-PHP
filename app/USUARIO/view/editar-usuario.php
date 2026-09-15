@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/style.css">
-    <title>Cadastro de Usuarios</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <title>Edição de Usuarios</title>
 </head>
 <body>
 
-    <h1>Cadastro de Usuarios</h1>
+    <h1>Editar Usuarios</h1>
     <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="formulario">
-        <form id="FormCadastro">
+        <form id="form_edicao_usuario" action="#" method="POST">
 
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="Nome Usuario">
@@ -40,16 +40,13 @@
             <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario">
 
             <div class="butons">
-                <button type="submit">ENVIAR</button>
-                <button type="reset">LIMPAR</button>
-                <div class="listar">
-                    <a href="./tela-listar.php">LISTAR</a>
-                </div>
+                <button type="submit" id="salvar" name="salvar">SALVAR</button>
+                <button href="../tela-listar.php">LISTAR</button>
             </div>
 
         </form>
     </div>
     
-    <script src="../../JS/cadastro.js"></script>
+    <script src="../JS/editar-usuario.js"></script>
 </body>
 </html>

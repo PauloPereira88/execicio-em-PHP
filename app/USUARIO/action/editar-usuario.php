@@ -3,26 +3,23 @@ require '../controller/Usuario.php';
 
 header('Content-Type: application/json');
 
-if(isset($_GET['id_usuario']) ) {
+if($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-    $id = $_GET['id_usuario'];
-    $objUser = new Usuario();
-    $dados = $objUser->editar_por_id($id);
+    $id_usuario = $_GET['id_usuario'];
 
-    if( $dados == false ){
-        $array = [
-            "status" => 400,
-            "msg" => "Usuario Inexistente!",
-        ];
+    if ($id_usuario) {
+        $usuario = new Usuario();
+        $dados = $usuario->buscar_por_id($id_usuario);
+
+        if (!empty($dados)) {
+            echo json_encode(["status" => 200, "data" => $dados]);
+        } else {
+            echo json_encode(["status" => 400, "msg" => "Usuario não Encontrado"]);
+        }
         exit;
-    } else {
-        $array = [
-            "status" => 200,
-            "msg" => "Dados Requisitados com Sucesso!",
-            "data" => $dados
-        ];
     }
-    echo json_encode($array);
+    echo json_encode(["status" => 400, "msg" => "Parametros Invalidos!"]);
+    exit;
 }
 
 if(isset($_POST) && isset($_POST['id_usuario'])) {
@@ -32,14 +29,6 @@ if(isset($_POST) && isset($_POST['id_usuario'])) {
     $cidade = $_POST['cidade'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
 
-    // if (empyt($id_usuario) || empyt($nome)) {
-    //     echo json_encode([
-    //         "status" => 400,
-    //         "msg" => "O ID eo Nome são Campos Obrigatórios."
-    //     ]);
-    //     exit;
-    // }
-
     $objUsuario = new Usuario();
     $objUsuario->id_usuario = $id_usuario;
     $objUsuario->nome = $nome;
@@ -48,19 +37,26 @@ if(isset($_POST) && isset($_POST['id_usuario'])) {
 
     try {
         $res = $objUsuario->editar();
-        $array = [
-            "status" => 200,
-            "msg" => "Usuario  Atualizado com Sucesso!"
-        ];
+        
+        if ($res) {
+            $array = [
+                "status" => 200,
+                "msg" => 'Usuario Atualizado com Sucesso!'
+            ];
+        } else {
+            $array = [
+                "status" => 400;
+                "msg" => 'Erro ao Editar Usuario!'
+            ];
+        }
+
         echo json_encode($array);
     }
-    catch(Exception $err) {
-
+    catch (Exception $err) {
         $array = [
             "status" => 400,
             "msg" => $err
         ];
-        
         echo json_encode($array);
     }
 }
