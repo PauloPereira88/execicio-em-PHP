@@ -22,7 +22,7 @@ async function carregarListagem() {
                 <td>${usuario.telefone}</td>
                 <td>
                     <div>
-                        <a href="editar-usuario.php?id_usuario=${usuario.id}">
+                        <a href="../action/editar-usuario.php?id_usuario=${usuario.id}">
                             EDITAR
                         </a>
                         <a href="../action/excluir-usuario.php?id_usuario=${usuario.id}">

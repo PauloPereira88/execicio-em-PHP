@@ -45,7 +45,7 @@ if(isset($_POST) && isset($_POST['id_usuario'])) {
             ];
         } else {
             $array = [
-                "status" => 400;
+                "status" => 400,
                 "msg" => 'Erro ao Editar Usuario!'
             ];
         }

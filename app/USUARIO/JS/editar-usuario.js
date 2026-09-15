@@ -1,12 +1,12 @@
 async function carregarDadosUsuario(id_usuario) {
     try {
-    const resposta = await fetch('../../action/editar-usuario.php?id_usuario=' +id_usuario);
+    const resposta = await fetch('../action/editar-usuario.php?id_usuario=' +id_usuario);
     const usuario = await resposta.json();
 
         console.log(usuario);
 
         if(usuario.status == 200) {
-            document.getElementById("id_usuario").value = usuario.data[0].id;
+            // document.getElementById("id_usuario").value = usuario.data[0].id;
             document.getElementById("nome").value = usuario.data[0].nome;
             document.getElementById("cidade").value = usuario.data[0].cidade;
             document.getElementById("telefone").value = usuario.data[0].telefone;

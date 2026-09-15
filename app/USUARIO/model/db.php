@@ -54,7 +54,12 @@ class Database {
     public function select($fields='*'){
         
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
-        return $this->execute($query);
+        $res = $this->execute($query);
+
+        // return $res;
+
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
+        return $dados;
     }   
     
     public function select_one_with_where($where = "", $binds = [], $fields = "*"){

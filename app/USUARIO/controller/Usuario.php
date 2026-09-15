@@ -29,9 +29,9 @@ class Usuario {
 
         $stmt = $db->select();
 
-        // return $stmt;
+        return $stmt;
 
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        // return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     }
 
@@ -65,7 +65,7 @@ class Usuario {
     public function delete($id_user) {
         $db = new Database($this->table_name);
 
-        return $db->delete("id = ?", [$id_user]);
+        return $db->delete("id_usuario = ?", [$id_user]);
     }
 
 }
