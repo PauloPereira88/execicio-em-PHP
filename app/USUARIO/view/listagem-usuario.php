@@ -45,7 +45,7 @@
         </div>
     </section>
 
-    <script src="../JS/carregar-Listagem.js"></script>
+    <script src="../JS/listagem-usuario.js"></script>
     
 </body>
 </html>

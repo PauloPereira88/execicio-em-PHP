@@ -4,10 +4,19 @@ require '../controller/Usuario.php';
 
 header('Content-Type: application/json');
 
-if($_SERVER["REQUEST_METHOD"] === 'POST') {
+if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $nome = $_POST['nome'] ?? '';
     $cidade = $_POST['cidade'] ?? '';
     $telefone = $_POST['telefone'] ?? '';
+
+    if (empty($nome) || empty($cidade) || empty($telefone)) {
+        http_response_code(400);
+        echo json_encode([
+            'success' => false,
+            'message' => 'Por favor, preencha todos os campos obrigatórios.'
+        ]);
+        exit;
+    }
 
     $objUsuario = new Usuario();
     $objUsuario->nome = $nome;
@@ -17,9 +26,9 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $res = $objUsuario->cadastrar();
 
     echo json_encode([
-        'success' => $res,
-        'message' => $res ? 'Cadastrado com Sucesso!' : 'Não Cadastrado!'
+        'sucess' => $res,
+        'message' => $res ? 'Cadastrado com Sucesso!' : 'Usuario não Cadastrado!'
     ]);
-
     exit;
+
 }

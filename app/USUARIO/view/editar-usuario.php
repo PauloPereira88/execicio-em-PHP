@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../CSS/style.css">
-    <title>Edição de Usuarios</title>
+    <title>Edição de Usuario</title>
 </head>
 <body>
 
-    <h1>Editar Usuarios</h1>
+    <h1>Editar Usuario</h1>
     <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>

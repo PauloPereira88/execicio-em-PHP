@@ -20,7 +20,7 @@
             <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
-            <a href="index3.php"><span>Usuario</span></a>
+            <a href="cadastrar-usuarios.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
             <a href="../ANIMAL/index4.php"><span>Animal</span></a>
@@ -28,7 +28,7 @@
     </div>
 
     <div class="formulario">
-        <form id="FormCadastro">
+        <form id="formCadastro">
 
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="Nome Usuario">
@@ -50,6 +50,6 @@
         </form>
     </div>
     
-    <script src="../JS/cadastro.js"></script>
+    <script src="../JS/cadastro-usuario.js"></script>
 </body>
 </html>
