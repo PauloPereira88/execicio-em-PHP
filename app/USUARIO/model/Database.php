@@ -49,4 +49,26 @@ class Database {
             return false;
         }
     }
+
+    public function select($fields='*') {
+        $query = "SELECT " . $fields . " FROM " . $this->table . ";";
+        $res = $this->execute($query);
+
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
+        return $dados;
+    }
+
+    public function select_all_with_where($where = "", $fields = "*"){
+        try {
+            $query = "SELECT {$fields} FROM {$this->table}";
+            if (!empty($where)) {
+                $query .= " WHERE {$where}";
+            }
+            $query .= ";";
+            $stmt = $this->conn->query($query);
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }  catch (\Throwable $th) {
+            throw $th;
+        }
+    }
 }

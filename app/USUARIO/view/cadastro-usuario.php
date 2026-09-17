@@ -43,7 +43,7 @@
                 <button type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
                 <div class="listar">
-                    <a href="./tela-listar.php">LISTAR</a>
+                    <a href="./listagem-usuario.php">LISTAR</a>
                 </div>
             </div>
 

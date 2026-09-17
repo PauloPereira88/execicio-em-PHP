@@ -1,0 +1,54 @@
+<?php
+
+require '../controller/Usuario.php';
+header('Content-Type: application/json');
+
+if ( isset($_GET['id']) ) {
+    $id = $_GET['id'];
+    $objUser = new Usuario();
+    $dados = $objUser->editar_por_id($id);
+
+    if( $dados == false ){
+        $array = [
+            "status" => 400,
+            "msg" => "Usuario Inexistente!",
+        ];
+    }else{
+        $array = [
+            "status" => 200,
+            "msg" => "Dados Requisitados com Sucesso!",
+            "data" => $dados
+        ];
+    }
+    echo json_encode($array);
+}
+
+if(isset($_POST) && isset($_POST['id_usuario'])){
+
+    $id_usuario = $_POST['id_usuario'];
+    $nome = $_POST['nome'] ?? '';
+    $cidade = $_POST['cidade'] ?? '';
+    $telefone = $_POST['telefone'] ?? '';
+
+    $objUsuario = new Usuario();
+    $objUsuario->id_usuario = $id_usuario;
+    $objUsuario->nome = $nome;
+    $objUsuario->cidade = $cidade;
+    $objUsuario->telefone = $telefone;
+
+    try {
+        $res = $objUsuario->editar();
+        $array = [
+            "status" => 200,
+            "msg" => "Usuario Atualizado com Sucesso!"
+        ];
+        echo json_encode($array);
+    }
+    catch (Exception $err) {
+        $array = [
+            "status" => 400,
+            "msg" => $err
+        ];
+        echo json_encode($array);
+    }
+}
