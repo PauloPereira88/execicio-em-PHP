@@ -3,8 +3,8 @@
 require '../controller/Usuario.php';
 header('Content-Type: application/json');
 
-if ( isset($_GET['id']) ) {
-    $id = $_GET['id'];
+if ( isset($_GET['id_usuario']) ) {
+    $id = $_GET['id_usuario'];
     $objUser = new Usuario();
     $dados = $objUser->editar_por_id($id);
 

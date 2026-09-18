@@ -1,6 +1,6 @@
 <?php
 
-require '../controller/Usuario.php';
+require_once '../controller/Usuario.php';
 
 header('Content-Type: application/json');
 
@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
     $telefone = $_POST['telefone'] ?? '';
 
     if (empty($nome) || empty($cidade) || empty($telefone)) {
-        http_response_code(400);
+
         echo json_encode([
             'success' => false,
             'message' => 'Por favor, preencha todos os campos obrigatórios.'
@@ -18,17 +18,26 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
         exit;
     }
 
-    $objUsuario = new Usuario();
-    $objUsuario->nome = $nome;
-    $objUsuario->cidade = $cidade;
-    $objUsuario->telefone = $telefone;
+    try {
+        $objUsuario = new Usuario();
+        $objUsuario->nome = $nome;
+        $objUsuario->cidade = $cidade;
+        $objUsuario->telefone = $telefone;
 
-    $res = $objUsuario->cadastrar();
+        $res = $objUsuario->cadastrar();
 
-    echo json_encode([
-        'sucess' => $res,
-        'message' => $res ? 'Cadastrado com Sucesso!' : 'Usuario não Cadastrado!'
-    ]);
-    exit;
+        echo json_encode([
+            'success' => $res,
+            'message' => $res ? 'Cadastrado com Sucesso!' : 'Usuario não Cadastrado!'
+        ]);
+        exit;
+    } catch (Exception $e) {
+        echo json_encode([
+            'success' => false,
+            'message' => 'Erro interno no servidor: ' . $e->getMessage()
+        ]);
+        exit;
+    
+    }
 
 }

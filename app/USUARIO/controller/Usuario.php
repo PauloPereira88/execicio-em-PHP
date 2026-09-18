@@ -1,6 +1,6 @@
 <?php
 
-require '../model/Database.php';
+require_once '../model/Database.php';
 
 class Usuario {
     
@@ -53,6 +53,8 @@ class Usuario {
     public function editar_por_id($id_user) {
         $db = new Database('usuario');
 
-        $res = $db->select_one_with_where("id_")
+        $res = $db->select_one_with_where("id_usuario = '{$id_user}'");
+
+        return $res;
     }
 }

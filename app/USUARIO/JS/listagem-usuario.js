@@ -2,7 +2,7 @@ async function listagemUsuario() {
     try {
         const resposta = await fetch('../actions/listagem-usuario.php');
         const usuarios = await resposta.json();
-        // console.log(usuarios);
+        // console.log(resposta);
 
         const bodyTable = document.getElementById("bodyTable");
         bodyTable.innerHTML = "";
@@ -16,10 +16,10 @@ async function listagemUsuario() {
                 <td>${usuario.telefone}</td>
                 <td>
                     <div>
-                        <a href="editar-usuario.php?id_usuario">EDITAR</a>
+                        <a href="../actions/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
                     </div>
                     <div>
-                        <a href="excluir-usuario.php">EXCLUIR</a>
+                        <a href="excluir-usuario.php?id=${usuario.id_usuario}">EXCLUIR</a>
                     </div>
                 </td>
             `;

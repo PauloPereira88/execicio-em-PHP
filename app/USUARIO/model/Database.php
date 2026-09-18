@@ -50,7 +50,7 @@ class Database {
         }
     }
 
-    public function select($fields='*') {
+    public function select($fields = '*') {
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
         $res = $this->execute($query);
 
