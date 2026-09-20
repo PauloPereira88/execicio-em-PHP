@@ -37,17 +37,20 @@ class Database {
     }
 
     public function insert($values) {
+
         try {
             $fields = array_keys($values);
             $params = array_pad([], count($fields), '?');
 
             $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ') VALUES (' . implode(',', $params) . ')';
             $res = $this->execute($query, array_values($values));
-            return $res ? true : false;
+            
+            return $res;
             
         } catch (\Throwable $th) {
             return false;
         }
+
     }
 
     public function select($fields = '*') {

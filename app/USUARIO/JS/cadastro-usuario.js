@@ -11,8 +11,9 @@ document.getElementById("formCadastro").addEventListener('submit', async functio
 
         const resultado = await response.json();
         alert(resultado.message);
-    } 
-    catch (error) {
+
+    } catch (error) {
         alert("Cadastrado com Sucesso!");
     }
-})
+
+});
