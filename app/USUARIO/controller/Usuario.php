@@ -1,6 +1,6 @@
 <?php
 
-require_once '../model/Database.php';
+require '../model/Database.php';
 
 class Usuario {
     
@@ -40,12 +40,14 @@ class Usuario {
     public function editar() {
         $db = new Database('usuario');
 
-        $res = $db->update([
+        $res = $db->update(
             "id_usuario" => $this->id_usuario,
-            "nome" => $this->nome,
-            "cidade" => $this->cidade,
-            "telefone" => $this->telefone,
-        ]);
+            [
+                "nome" => $this->nome,
+                "cidade" => $this->cidade,
+                "telefone" => $this->telefone,
+            ]
+        );
 
         return $res;
     }

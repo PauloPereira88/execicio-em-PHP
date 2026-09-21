@@ -3,8 +3,8 @@
 require '../controller/Usuario.php';
 header('Content-Type: application/json');
 
-if ( isset($_GET['id_usuario']) ) {
-    $id = $_GET['id_usuario'];
+if ( isset($_GET['id']) ) {
+    $id = $_GET['id'];
     $objUser = new Usuario();
     $dados = $objUser->editar_por_id($id);
 
@@ -21,6 +21,7 @@ if ( isset($_GET['id_usuario']) ) {
         ];
     }
     echo json_encode($array);
+    exit;
 }
 
 if(isset($_POST) && isset($_POST['id_usuario'])){
@@ -43,12 +44,14 @@ if(isset($_POST) && isset($_POST['id_usuario'])){
             "msg" => "Usuario Atualizado com Sucesso!"
         ];
         echo json_encode($array);
+        exit;
     }
     catch (Exception $err) {
         $array = [
             "status" => 400,
-            "msg" => $err
+            "msg" => $err->getMessage()
         ];
         echo json_encode($array);
+        exit;
     }
 }

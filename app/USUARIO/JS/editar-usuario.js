@@ -18,11 +18,3 @@ async function carregarDadosUsuario(id_usuario) {
         console.log("Erro ao Carregar Lista:", error);
     }
 }
-
-window.addEventListener("DOMContentLoaded", function() {
-    const parametros = new URLSearchParams(this.window.location.search);
-
-    const id_usuario = parametros.get("id");
-
-    carregarDadosUsuario(id_usuario);
-});

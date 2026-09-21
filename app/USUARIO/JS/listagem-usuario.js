@@ -2,7 +2,6 @@ async function listagemUsuario() {
     try {
         const resposta = await fetch('../actions/listagem-usuario.php');
         const usuarios = await resposta.json();
-        // console.log(resposta);
 
         const bodyTable = document.getElementById("bodyTable");
         bodyTable.innerHTML = "";
@@ -11,6 +10,7 @@ async function listagemUsuario() {
             const tr = document.createElement("tr");
 
             tr.innerHTML = `
+                <td>${usuario.id_usuario}</td>
                 <td>${usuario.nome}</td>
                 <td>${usuario.cidade}</td>
                 <td>${usuario.telefone}</td>
@@ -28,7 +28,7 @@ async function listagemUsuario() {
         });
 
     } catch (error) {
-        // console.error("Erro ao Carregar Lista:", error);
+        console.error("Erro ao Carregar Lista:", error);
     }
 }
 
