@@ -21,17 +21,12 @@ class Database {
             return true;
 
         } catch (\PDOException $erro) {
-            echo "Erro de conexão: " . $erro->getMessage();
             return false;
         }
     }
 
     public function execute($query, $params = []) {
         try {
-
-            if (!$this->conn) {
-                return false;
-            }
 
             $command = $this->conn->prepare($query);
             $command->execute($params);
@@ -63,45 +58,54 @@ class Database {
         $query = "SELECT " . $fields . " FROM " . $this->table . ";";
         $res = $this->execute($query);
 
-        if ($res) {
-            return $res->fetchAll(\PDO::FETCH_ASSOC);
-        }
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
 
-        return [];
+        return $dados;
     }
 
-    public function update($where, $values) {
+    public function update($where, $data) {
         try {
-            $fields = array_keys($values);
+            $fields = array_keys($data);
 
-            $setFields = array_map(function($field) {
-                return "$field = ?";
-            }, $fields);
+            $sets = implod('=?, ', $fields) . '=?';
 
-            $query = 'UPDATE ' . $this->table . ' SET ' . implode(', ', $setFields) . ' WHERE ' . $where;
+            $query = "UPDATE " . $this->table . " SET " . $sets . " WHERE " . $where;
 
-            $res = $this->execute($query, array_values($values));
-
+            $res = $this->execute($query, array_values($data));
             return $res ? true : false;
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
 
+    public function delete($id_tratado)
+    { 
+
+        try {
+            $query = "DELETE FROM " . $this->table . " WHERE " . $id_tratado;
+            $res = $this->execute($query);
+
+            if ($res) {
+                return true;
+            } else {
+                return false;
+            }
         } catch (\Throwable $th) {
             return false;
         }
     }
 
     public function select_one_with_where($where = "", $fields = "*") {
-        try {
-            $query = "SELECT {$fields} FROM {$this->table}";
-            if (!empty($where)) {
-                4query .= " WHERE {$where}";
-            }
-            $query .= " LIMIT 1;";
-            
-            $stmt = $this->conn->query($query);
-            return $stmt->fetch(PDO::FETCH_ASSOC);
-        } catch (\Throwable $th) {
-            throw $th;
+        
+        $query = "SELECT {$fields} FROM {$this->table}";
+        if (!empty($where)) {
+            $query .= " WHERE {$where}";
         }
+        $query .= ";";
+        
+        $res = $this->execute($query);
+        return $res ? $res->fetch(PDO::FETCH_ASSOC) : false;
+        
     }
 
     public function select_all_with_where($where = "", $fields = "*"){
@@ -111,8 +115,9 @@ class Database {
                 $query .= " WHERE {$where}";
             }
             $query .= ";";
-            $stmt = $this->conn->query($query);
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            $res = $this->execute($query);
+            return $res ? $res->fetchAll(PDO::FETCH_ASSOC) : [];
         }  catch (\Throwable $th) {
             throw $th;
         }

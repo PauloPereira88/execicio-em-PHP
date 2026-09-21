@@ -16,7 +16,7 @@ async function listagemUsuario() {
                 <td>${usuario.telefone}</td>
                 <td>
                     <div>
-                        <a href="../actions/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
+                        <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
                     </div>
                     <div>
                         <a href="excluir-usuario.php?id=${usuario.id_usuario}">EXCLUIR</a>

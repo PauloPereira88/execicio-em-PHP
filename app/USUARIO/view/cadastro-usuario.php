@@ -40,7 +40,7 @@
             <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario" required>
 
             <div class="butons">
-                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <button type="submit">ENVIAR</button>
                 <button type="reset">LIMPAR</button>
                 <div class="listar">
                     <a href="./listagem-usuario.php">LISTAR</a>

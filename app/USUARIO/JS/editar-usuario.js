@@ -18,3 +18,41 @@ async function carregarDadosUsuario(id_usuario) {
         console.log("Erro ao Carregar Lista:", error);
     }
 }
+
+window.addEventListener("DOMContentLoaded", function() {
+    const parametros = new URLSearchParams(window.location.search);
+
+    const id_usuario = parametros.get("id");
+
+    carregarDadosUsuario(id_usuario);
+});
+
+let formulario = document.getElementById("formEdicaoUsuario");
+
+formulario.addEventListener("submit", async function(event) {
+
+    event.preventDefault();
+    
+    const formData = new FormData(formulario);
+    
+    try{
+        
+        let response = await fetch('../actions/editar-usuario.php' , {
+           method : 'POST',
+           body : formData
+        });
+
+        let result = await response.json();
+
+        if(response.status == 400){
+               alert(result.msg);
+           
+        }else{
+             alert(result.msg);
+            window.location.href = './listagem-usuario.php';
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
+})

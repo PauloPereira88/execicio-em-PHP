@@ -28,7 +28,8 @@
     </div>
 
     <div class="formulario">
-        <form id="form_edicao_usuario" action="#" method="POST">
+        <form action="#" method="POST">
+            <input type="hidden" name="id_usuario" id="id_usuario">
 
             <label for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" placeholder="Nome Usuario">
@@ -40,8 +41,8 @@
             <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario">
 
             <div class="butons">
-                <button type="submit" id="salvar" name="salvar">SALVAR</button>
-                <button href="../tela-listar.php">LISTAR</button>
+                <button type="submit" id="salvar" name="salvar">ATUALIZAR</button>
+                <button><a href="../tela-listar.php">LISTAR</a></button>
             </div>
 
         </form>

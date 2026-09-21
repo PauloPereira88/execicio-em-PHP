@@ -32,7 +32,8 @@ class Usuario {
     public function buscar_por_id() {
         $db = new Database('usuario');
 
-        $res = $db->select_all_with_where("id_usuario = '{$_SESSION["usuario_id"]}'");
+        $id_sessao = $_SESSION["usuario_id"] ?? 0;
+        $res = $db->select_all_with_where("id_usuario = '{$id_sessao}'");
 
         return $res;
     }
@@ -41,11 +42,11 @@ class Usuario {
         $db = new Database('usuario');
 
         $res = $db->update(
-            "id_usuario" => $this->id_usuario,
+            "id_usuario = '{$this->id_usuario}'",
             [
                 "nome" => $this->nome,
                 "cidade" => $this->cidade,
-                "telefone" => $this->telefone,
+                "telefone" => $this->telefone
             ]
         );
 
@@ -57,6 +58,10 @@ class Usuario {
 
         $res = $db->select_one_with_where("id_usuario = '{$id_user}'");
 
-        return $res;
+        if ($res) {
+            return $res;
+        } else {
+            return false;
+        }
     }
 }

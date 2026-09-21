@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] === 'POST') {
 
     echo json_encode([
         'success' => $res,
-        'message' => $res ? 'Cadastrado com Sucesso' : 'Usuario não Cadastrado'
+        'message' => $res ? 'Cadastrado com Sucesso!' : 'Usuario não Cadastrado!'
     ]);
 
 }

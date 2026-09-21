@@ -13,7 +13,7 @@ document.getElementById("formCadastro").addEventListener('submit', async functio
         alert(resultado.message);
 
     } catch (error) {
-        alert("Cadastrado com Sucesso!");
+        alert("ERRO NA REQUISIÇÃO!");
     }
 
 });
