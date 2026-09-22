@@ -10,6 +10,7 @@ if ( isset($_GET['id']) ) {
     $dados = $objUser->editar_por_id($id);
 
     if( $dados == false ){
+        http_response_code(400);
         $array = [
             "status" => 400,
             "msg" => "Usuario Inexistente!",
@@ -22,7 +23,7 @@ if ( isset($_GET['id']) ) {
         ];
     }
     echo json_encode($array);
-
+    exit;
 }
 
 if(isset($_POST) && isset($_POST['id_usuario'])){
@@ -48,11 +49,12 @@ if(isset($_POST) && isset($_POST['id_usuario'])){
        
     }
     catch (Exception $err) {
+        http_response_code(400);
         $array = [
             "status" => 400,
             "msg" => "ERRO AO ATUALIZAR: " . $err->getMessage()
         ];
         echo json_encode($array);
     }
-    
+    exit;
 }

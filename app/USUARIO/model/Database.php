@@ -67,7 +67,7 @@ class Database {
         try {
             $fields = array_keys($data);
 
-            $sets = implod('=?, ', $fields) . '=?';
+            $sets = implode('=?, ', $fields) . '=?';
 
             $query = "UPDATE " . $this->table . " SET " . $sets . " WHERE " . $where;
 

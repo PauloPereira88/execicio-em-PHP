@@ -15,11 +15,13 @@ async function listagemUsuario() {
                 <td>${usuario.cidade}</td>
                 <td>${usuario.telefone}</td>
                 <td>
-                    <div>
-                        <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
-                    </div>
-                    <div>
-                        <a href="excluir-usuario.php?id=${usuario.id_usuario}">EXCLUIR</a>
+                    <div class="buttons">
+                        <div class="verde">
+                            <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
+                        </div>
+                        <div class="vermelho">
+                            <a href="excluir-usuario.php?id=${usuario.id_usuario}">EXCLUIR</a>
+                        </div>
                     </div>
                 </td>
             `;

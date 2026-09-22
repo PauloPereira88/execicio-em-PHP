@@ -3,31 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/listagem-usuario.css">
     <title>LISTA DE USUARIO</title>
 </head>
 <body>
 
-    <section>
+    <h1>Lista de Usuarios</h1>
+
+    <section class="header">
         <form action="" method="GET">
-            <div>
+            <div class="pesquisa">
                 <label for="nome">Nome</label>
                 <input type="text" id="nome" name="nome">
             </div>
-            <div>
+            <div class="pesquisa">
                 <label for="telefone">Telefone</label>
                 <input type="text" id="telefone" name="telefone">
             </div>
-            <div>
+            <div class="filtrar">
                 <button type="submit">
-                    <i class="bi bi-search"></i>
                     Filtrar
                 </button>
             </div>
         </form>
     </section>
-    <section>
-        <h1>Lista de Usuarios</h1>
-        <div>
+
+    <section class="principal">
+        <div class="menu">
             <table>
                 <thead>
                     <tr>

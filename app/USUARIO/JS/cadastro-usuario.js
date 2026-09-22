@@ -11,6 +11,7 @@ document.getElementById("formCadastro").addEventListener('submit', async functio
 
         const resultado = await response.json();
         alert(resultado.message);
+        window.location.href = './listagem-usuario.php';
 
     } catch (error) {
         alert("ERRO NA REQUISIÇÃO!");

@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #ccc;
+}
+
+h1 {
+    margin: 12px;
+    text-align: center;
+}
+
+.header form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    margin-bottom: 25px;
+}
+
+.pesquisa {
+    display: flex;
+    flex-direction: column;
+}
+
+.pesquisa label {
+    margin-bottom: 5px;
+}
+
+.pesquisa input {
+    padding: 3px;
+    background-color: #ffffff;
+    border: 1px solid #b9b8b8;
+    border-radius: .3rem;
+}
+
+.filtrar button {
+    padding: 6px 12px 6px 12px; 
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    background-color: rgb(0, 163, 0);
+}
+
+.filtrar button:hover {
+    background-color: rgb(0, 139, 0);
+}
+
+.principal {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.menu {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    text-align: left;
+}
+
+th, td {
+    padding: 8px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.verde {
+    background-color: rgb(0, 177, 0);
+    border-radius: 5px;
+    padding: 3px; 
+}
+
+.verde:hover {
+    background-color: green;
+}
+
+.verde a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.vermelho {
+    background-color: rgb(177, 0, 0);
+    border-radius: 5px;
+    padding: 3px; 
+}
+
+.vermelho:hover {
+    background-color: rgb(145, 0, 0);
+}
+
+.vermelho a {
+    text-decoration: none;
+    color: #fff;
+}
+
+thead tr {
+    background-color: rgb(0, 163, 0);
+    color: #ffffff;
+    font-weight: bold;
+}
+
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+tbody tr:hover {
+    background-color: #f1f1f1;
+}
