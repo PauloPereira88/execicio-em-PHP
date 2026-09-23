@@ -64,4 +64,12 @@ class Usuario {
             return false;
         }
     }
+
+    public function excluir($id_user) {
+        $db = new Database('usuario');
+
+        $res = $db->delete("id_usuario = '{$id_user}'");
+
+        return $res;
+    }
 }

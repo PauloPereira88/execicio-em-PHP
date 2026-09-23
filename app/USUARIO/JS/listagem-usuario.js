@@ -20,7 +20,7 @@ async function listagemUsuario() {
                             <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
                         </div>
                         <div class="vermelho">
-                            <a href="excluir-usuario.php?id=${usuario.id_usuario}">EXCLUIR</a>
+                            <button onclick="deletarUsuario(${usuario.id_usuario}, this)">EXCLUIR</button>
                         </div>
                     </div>
                 </td>
@@ -32,6 +32,30 @@ async function listagemUsuario() {
     } catch (error) {
         console.error("Erro ao Carregar Lista:", error);
     }
+}
+
+async function deletarUsuario(id, botao) {
+  if (!confirm("Tem certeza que deseja excluir este usuário?")) {
+    return; 
+  }
+
+  try {
+    
+    const resposta = await fetch(`../actions/deletar-usuario.php?id=${id}`);
+    const resultado = await resposta.json();
+
+    if (resultado.sucesso) {
+      
+      const linha = botao.closest('tr');
+      linha.remove();
+      alert("Usuário excluído com sucesso!");
+    } else {
+      alert("Erro ao excluir: " + resultado.erro);
+    }
+  } catch (error) {
+    console.error("Erro na requisição:", error);
+    alert("Erro de comunicação com o servidor.");
+  }
 }
 
 window.addEventListener("DOMContentLoaded", listagemUsuario);

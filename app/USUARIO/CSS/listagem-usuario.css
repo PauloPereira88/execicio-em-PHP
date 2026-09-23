@@ -99,16 +99,17 @@ th, td {
 .vermelho {
     background-color: rgb(177, 0, 0);
     border-radius: 5px;
-    padding: 3px; 
+    padding: 3px;
 }
 
 .vermelho:hover {
     background-color: rgb(145, 0, 0);
 }
 
-.vermelho a {
+.vermelho button {
     text-decoration: none;
-    color: #fff;
+    color: #c70000;
+    cursor: pointer;
 }
 
 thead tr {
