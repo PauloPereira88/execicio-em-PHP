@@ -25,6 +25,9 @@
                     Filtrar
                 </button>
             </div>
+            <div class="novo">
+                <a href="./cadastro-usuario.php">Novo Usuario</a>
+            </div>
         </form>
     </section>
 

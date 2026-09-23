@@ -52,6 +52,21 @@ h1 {
     background-color: rgb(0, 139, 0);
 }
 
+.novo {
+    padding: 8px;
+    border-radius: 6px;
+    background-color: rgba(255, 196, 0, 0.808);
+}
+
+.novo:hover {
+    background-color: rgba(173, 133, 0, 0.808);
+}
+
+.novo a {
+    text-decoration: none;
+    color: #fff;
+}
+
 .principal {
     width: 100%;
     margin: 0 auto;
