@@ -10,20 +10,20 @@ async function listagemUsuario() {
             const tr = document.createElement("tr");
 
             tr.innerHTML = `
-                <td>${usuario.id_usuario}</td>
-                <td>${usuario.nome}</td>
-                <td>${usuario.cidade}</td>
-                <td>${usuario.telefone}</td>
-                <td>
-                    <div class="buttons">
-                        <div class="verde">
-                            <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
-                        </div>
-                        <div class="vermelho">
-                            <button onclick="deletarUsuario(${usuario.id_usuario}, this)">EXCLUIR</button>
-                        </div>
-                    </div>
-                </td>
+              <td>${usuario.id_usuario}</td>
+              <td>${usuario.nome}</td>
+              <td>${usuario.cidade}</td>
+              <td>${usuario.telefone}</td>
+              <td>
+                  <div class="buttons">
+                      <div class="verde">
+                          <a href="../view/editar-usuario.php?id=${usuario.id_usuario}">EDITAR</a>
+                      </div>
+                      <div class="vermelho">
+                          <button onclick="deletarUsuario(${usuario.id_usuario}, this)">EXCLUIR</button>
+                      </div>
+                  </div>
+              </td>
             `;
 
             bodyTable.appendChild(tr);
