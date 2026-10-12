@@ -1,6 +1,6 @@
 <?php
 
-require 'onibus.php';
+require '../controller/Tipo.php';
 
 header('Content-Type: application/json');
 
@@ -10,16 +10,16 @@ if($_SERVER["REQUEST_METHOD"] === 'POST') {
     $modelo = $_POST['modelo'] ?? '';
     $lugares = $_POST['lugares'] ?? '';
 
-    $objonibus = new onibus();
-    $objonibus->tipo = $tipo;
-    $objonibus->marca = $marca;
-    $objonibus->modelo = $modelo;
-    $objonibus->lugares = $lugares;
+    $objTipo = new Tipo();
+    $objTipo->tipo = $tipo;
+    $objTipo->marca = $marca;
+    $objTipo->modelo = $modelo;
+    $objTipo->lugares = $lugares;
 
-    $res = $objonibus->cadastrar();
+    $res = $objTipo->cadastrar();
 
     echo json_encode([
-        'sucess' => $res,
+        'success' => $res,
         'message' => $res ? 'Cadastrado com Sucesso!' : 'Não Cadastrado!'
     ]);
 

@@ -3,12 +3,12 @@
 class Database {
     private $conn;
     private string $host = 'localhost';
-    private string $db = 'veiculo';
+    private string $db = 'cadastros';
     private string $user = 'root';
     private string $pass = '';
     private $table;
 
-    public function __construct($table = null) {
+    function __construct($table = null) {
         $this->table = $table;
         $this->conectar();
     }
@@ -18,23 +18,22 @@ class Database {
             $this->conn = new PDO("mysql:host=" . $this->host . ";dbname=" . $this->db, $this->user, $this->pass);
 
             $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (\Throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+            return true;
+
+        } catch (\PDOException $erro) {
+            return false;
         }
     }
 
-    public function execute($query, $binds = []) {
+    public function execute($query, $params = []) {
         try {
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute($binds);
 
-            return $stmt;
-        } catch (\throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+            $command = $this->conn->prepare($query);
+            $command->execute($params);
+            return $command;
+
+        } catch (\PDOException $erro) {
+            return false;
         }
     }
 
@@ -43,16 +42,23 @@ class Database {
             $fields = array_keys($values);
             $binds = array_fill(0, count($fields), '?');
 
-            $query = "INSERT INTO " . $this->table . " (" . implode(',', $fields) . " ) VALUES ( " . implode(',', $binds) . " )";
+            $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ') VALUES ( ' . implode(',', $binds) . ')';
 
             $res = $this->execute($query, array_values($values));
 
             return $res ? true : false;
+            
         } catch (\throwable $th) {
-            echo "<pre>";
-            print_r($th->getMessage());
-            echo "</pre>";
+            return false;
         }
+    }
+
+    public function select($fields = '*') {
+        $query = "SELECT " . $fields . " FROM " . $this->table . ";";
+        $res = $this->execute($query);
+
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
+        return $dados;
     }
 }
 

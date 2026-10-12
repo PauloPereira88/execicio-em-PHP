@@ -40,16 +40,17 @@
             <input type="text" id="telefone" name="telefone" placeholder="Telefone do Usuario" required>
 
             <div class="butons">
-                <button type="submit">ENVIAR</button>
-                <button type="reset">LIMPAR</button>
                 <div class="listar">
                     <a href="./listagem-usuario.php">LISTAR</a>
                 </div>
+                <button type="reset">LIMPAR</button>
+                <button type="submit">ENVIAR</button>
             </div>
 
         </form>
     </div>
     
     <script src="../JS/cadastro-usuario.js"></script>
+    <script defer src="../JS/mascara-usuario.js"></script>
 </body>
 </html>

@@ -9,7 +9,8 @@
 <body>
 
     <h1>Editar Usuario</h1>
-    <div class="veiculos">
+    
+    <!-- <div class="veiculos">
         <div class="carro">
             <a href="../CARRO/index.php"><span>CARRO</span></a>
         </div>
@@ -25,7 +26,7 @@
         <div class="animal">
             <a href="../ANIMAL/index4.php"><span>Animal</span></a>
         </div>
-    </div>
+    </div> -->
 
     <div class="formulario">
         <form id="formEdicaoUsuario" action="#" method="POST">
@@ -51,5 +52,6 @@
     </div>
     
     <script src="../JS/editar-usuario.js"></script>
+    <script src="../JS/mascara-usuario.js"></script>
 </body>
 </html>

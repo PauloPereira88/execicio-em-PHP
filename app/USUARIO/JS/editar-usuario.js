@@ -8,7 +8,7 @@ async function carregarDadosUsuario(id_usuario) {
             document.getElementById("id_usuario").value = usuario.data.id_usuario;
             document.getElementById("nome").value = usuario.data.nome;
             document.getElementById("cidade").value = usuario.data.cidade;
-            document.getElementById("telefone").value = usuario.data.telefone;
+            document.getElementById("telefone").value = formatarTelefone(usuario.data.telefone);
         }
         else {
             alert(usuario.msg);
@@ -56,3 +56,17 @@ formulario.addEventListener("submit", async function(event) {
         console.log(error);
     }
 })
+
+function formatarTelefone(valor) {
+    if (!valor) return "";
+    const limpo = String(valor).replace(/\D/g, "");
+
+    if (limpo.length === 11) {
+        return limpo.replace(/^(\d{2})(\d{5})(\d+)/, '($1) $2-$3');
+        
+    } else if (limpo.length === 10) {
+        return limpo.replace(/^(\d{2})(\d{4})(\d+)/, '($1) $2-$3');
+    }
+
+    return valor;
+}

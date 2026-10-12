@@ -1,9 +1,9 @@
 <?php
 
-require 'db.php';
+require '../model/Database.php';
 
-class Onibus {
-    public int $id;
+class Tipo {
+    public ?int $id_tipo = null;
     public string $tipo;
     public string $marca;
     public string $modelo;
@@ -21,6 +21,12 @@ class Onibus {
 
         return $res;
     }
-}
 
-?>
+    public function buscar() {
+        $db = new Database('tipo');
+
+        $stmt = $db->select();
+
+        return $stmt;
+    }
+}

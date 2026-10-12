@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Cadastro de Veiculo</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <title>Cadastro do Tipo de Veiculo</title>
 </head>
 <body>
 
@@ -30,28 +30,32 @@
     <div class="formulario">
         <form id="FormCadastro">
             <label for="tipo">Tipo:</label>
-            <select name="tipo" id="tipo">
+            <select id="tipo" name="tipo">
                 <option value="van">Vans</option>
                 <option value="micro_onibus">Micro-Onibus</option>
                 <option value="onibus">Onibus</option>
+                <option value="carreta">Carreta</option>
             </select>
 
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca do veiculo">
+            <input type="text" id="marca" name="marca" placeholder="Marca do veiculo">
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo do veiculo">
+            <input type="text" id="modelo" name="modelo" placeholder="Modelo do veiculo">
 
             <label for="lugares">Lugares:</label>
-            <input type="number" name="lugares" placeholder="Quantidade de Lugares">
+            <input type="number" id="lugares" name="lugares" placeholder="Quantidade de Lugares">
 
             <div class="butons">
-                <button name="REQUEST_METHOD" type="submit">ENVIAR</button>
+                <div class="listar">
+                    <a href="./listagem-tipo.php">LISTAR</a>
+                </div>
                 <button type="reset">LIMPAR</button>
+                <button type="submit">ENVIAR</button>
             </div>
         </form>
     </div>
     
-    <script src="cadastro.js"></script>
+    <script src="../JS/cadastro-tipo.js"></script>
 </body>
 </html>

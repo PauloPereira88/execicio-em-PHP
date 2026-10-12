@@ -3,6 +3,10 @@
 require '../controller/Usuario.php';
 header('Content-Type: application/json');
 
+    function somenteNumeros($valor) {
+        return preg_replace('/\D/', '', $valor ?? '');
+    }
+
 if ( isset($_GET['id']) ) {
 
     $id = $_GET['id'];
@@ -31,13 +35,13 @@ if(isset($_POST) && isset($_POST['id_usuario'])){
     $id_usuario = $_POST['id_usuario'];
     $nome = $_POST['nome'] ?? '';
     $cidade = $_POST['cidade'] ?? '';
-    $telefone = $_POST['telefone'] ?? '';
+    $telefone = somenteNumeros($_POST['telefone']) ?? '';
 
     $objUsuario = new Usuario();
     $objUsuario->id_usuario = $id_usuario;
     $objUsuario->nome = $nome;
     $objUsuario->cidade = $cidade;
-    $objUsuario->telefone = $telefone;
+    $objUsuario->telefone = somenteNumeros($_POST['telefone']);
 
     try {
         $res = $objUsuario->editar();

@@ -10,10 +10,10 @@ async function listagemUsuario() {
             const tr = document.createElement("tr");
 
             tr.innerHTML = `
-              <td>${usuario.id_usuario}</td>
-              <td>${usuario.nome}</td>
-              <td>${usuario.cidade}</td>
-              <td>${usuario.telefone}</td>
+              <td nowrap>${usuario.id_usuario}</td>
+              <td nowrap>${usuario.nome ?? ""}</td>
+              <td nowrap>${usuario.cidade ?? ""}</td>
+              <td nowrap>${formatarTelefone(usuario.telefone ?? "")}</td>
               <td>
                   <div class="buttons">
                       <div class="verde">
@@ -56,6 +56,18 @@ async function deletarUsuario(id, botao) {
     console.error("Erro na requisição:", error);
     alert("Erro de comunicação com o servidor.");
   }
+}
+
+function formatarTelefone(valor) {
+  if (!valor) return "";
+  const limpo = String(valor).replace(/\D/g, "");
+
+  if (limpo.length === 11) {
+    return limpo.replace(/^(\d{2})(\d{5})(\d+)/, '(\$1) \$2-\$3');
+  } else if (limpo.length === 10) {
+    return limpo.replace(/^(\d{2})(\d{4})(\d+)/, '(\$1) \$2-\$3');
+  }
+  return valor;
 }
 
 window.addEventListener("DOMContentLoaded", listagemUsuario);
