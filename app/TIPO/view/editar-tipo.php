@@ -30,6 +30,8 @@
 
     <div class="formulario">
         <form id="formEdicaoTipo" action="#" method="POST">
+            <input type="hidden" name="id_tipo" id="id_tipo">
+
             <label for="tipo">Tipo:</label>
             <select id="tipo" name="tipo">
                 <option value="van">Vans</option>
@@ -48,11 +50,10 @@
             <input type="number" id="lugares" name="lugares" placeholder="Quantidade de Lugares">
 
             <div class="butons">
+                <button type="submit" id="salvar" name="salvar">SALVAR</button>
                 <div class="listar">
                     <a href="./listagem-tipo.php">LISTAR</a>
                 </div>
-                <button type="reset">LIMPAR</button>
-                <button type="submit">ENVIAR</button>
             </div>
         </form>
     </div>

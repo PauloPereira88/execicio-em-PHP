@@ -1,4 +1,4 @@
-async function carregarDadosTipo() {
+async function carregarDadosTipo(id_tipo) {
     try {
         const resposta = await fetch('../actions/editar-tipo.php?id='+id_tipo);
         const tipo = await resposta.json();
@@ -35,7 +35,7 @@ formulario.addEventListener("submit", async function (event) {
     const formData = new FormData(formulario);
 
     try {
-        let response = await fatch('../action/editar-tipo.php', {
+        let response = await fetch('../actions/editar-tipo.php', {
             method : 'POST',
             body : formData
         });

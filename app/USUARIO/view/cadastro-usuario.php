@@ -17,7 +17,7 @@
             <a href="../../MOTO/index1.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
-            <a href="../../ONIBUS/index2.php"><span>Tipo</span></a>
+            <a href="../../TIPO/view/cadastro-tipo.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
             <a href="cadastro-usuario.php"><span>Usuario</span></a>
