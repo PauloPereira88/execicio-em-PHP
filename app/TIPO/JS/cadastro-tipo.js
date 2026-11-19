@@ -11,9 +11,13 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
 
         const resultado = await response.json();
         alert(resultado.message);
-        window.location.href = './listagem-tipo.php';
+
+        if (resultado.success) {
+            window.location.href = './listagem-tipo.php';
+        }
 
     } catch (error) {
-        alert ("Erro na Requisicao");
+        console.error("Erro na requisição:", error);
+        alert("Erro na requisição. Verifique a conexão com o servidor.");
     }
 });

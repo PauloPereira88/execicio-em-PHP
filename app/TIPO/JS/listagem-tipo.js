@@ -31,7 +31,7 @@ async function listagemTipo() {
         });
 
     } catch (error) {
-        console.error("Erro ao Carregar Lista:", error);
+      console.error("Erro ao Carregar Lista:", error);
     }
 }
 

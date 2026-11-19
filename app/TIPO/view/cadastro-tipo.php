@@ -17,7 +17,7 @@
             <a href="../MOTO/index1.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
-            <a href="index2.php"><span>Tipo</span></a>
+            <a href="cadastro-tipo.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
             <a href="../USUARIO/index3.php"><span>Usuario</span></a>
@@ -38,13 +38,13 @@
             </select>
 
             <label for="marca">Marca:</label>
-            <input type="text" id="marca" name="marca" placeholder="Marca do veiculo">
+            <input type="text" id="marca" name="marca" placeholder="Marca do veiculo" required>
 
             <label for="modelo">Modelo:</label>
-            <input type="text" id="modelo" name="modelo" placeholder="Modelo do veiculo">
+            <input type="text" id="modelo" name="modelo" placeholder="Modelo do veiculo" required>
 
             <label for="lugares">Lugares:</label>
-            <input type="number" id="lugares" name="lugares" placeholder="Quantidade de Lugares">
+            <input type="number" id="lugares" name="lugares" min="1" placeholder="Quantidade de Lugares" required>
 
             <div class="butons">
                 <div class="listar">
