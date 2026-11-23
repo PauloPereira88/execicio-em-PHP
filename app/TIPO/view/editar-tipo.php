@@ -30,6 +30,8 @@
 
     <div class="formulario">
         <form id="formEdicaoTipo" action="#" method="POST">
+            <input type="hidden" nome="id_tipo" id="id_tipo">
+            
             <label for="tipo">Tipo:</label>
             <select id="tipo" name="tipo">
                 <option value="van">Vans</option>

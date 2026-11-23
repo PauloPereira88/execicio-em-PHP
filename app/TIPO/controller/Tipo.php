@@ -29,4 +29,11 @@ class Tipo {
 
         return $stmt;
     }
+
+    public function editar_por_id($id) {
+        $db = new Database('tipo');
+        $res = $db->execute("SELECT * FROM tipo WHERE id_tipo = ?", [$id]);
+
+        return $res ? $res->fetch(\PDO::FETCH_ASSOC) : false;
+    }
 }

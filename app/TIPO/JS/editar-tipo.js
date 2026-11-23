@@ -1,21 +1,20 @@
-async function carregarDadosTipo() {
+async function carregarDadosTipo(id_tipo) {
     try {
-        const resposta = await fetch('../actions/editar-tipo.php?id='+id_tipo);
+        const resposta = await fetch('../actions/editar-tipo.php?id=' +(id_tipo));
         const tipo = await resposta.json();
 
-        if(tipo.status == 200)
-        {
+        if (resposta.ok && tipo.status === 200) {
             document.getElementById("id_tipo").value = tipo.data.id_tipo;
             document.getElementById("tipo").value = tipo.data.tipo;
             document.getElementById("marca").value = tipo.data.marca;
             document.getElementById("modelo").value = tipo.data.modelo;
             document.getElementById("lugares").value = tipo.data.lugares;
         } else {
-            alert(tipo.msg);
+            alert(tipo.msg || "Não foi possível carregar o tipo de veículo.");
             window.location.href = './listagem-tipo.php';
         }
     } catch (error) {
-        console.log("Erro ao Carregar Lista:", error);
+        console.error("Erro ao carregar tipo de veículo:", error);
     }
 }
 
@@ -35,9 +34,9 @@ formulario.addEventListener("submit", async function (event) {
     const formData = new FormData(formulario);
 
     try {
-        let response = await fatch('../action/editar-tipo.php', {
-            method : 'POST',
-            body : formData
+        let response = await fetchem('../actions/editar-tipo.php', {
+            method: 'POST',
+            body: formData
         });
 
         let result = await response.json();
