@@ -14,7 +14,7 @@
             <a href="../../CARRO/index.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="../../MOTO/index1.php"><span>MOTO</span></a>
+            <a href="../../MOTO/view/cadastro-moto.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
             <a href="../../TIPO/view/cadastro-tipo.php"><span>Tipo</span></a>

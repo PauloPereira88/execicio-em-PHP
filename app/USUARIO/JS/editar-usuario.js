@@ -30,7 +30,6 @@ window.addEventListener("DOMContentLoaded", function() {
 let formulario = document.getElementById("formEdicaoUsuario");
 
 formulario.addEventListener("submit", async function(event) {
-
     event.preventDefault();
     
     const formData = new FormData(formulario);
@@ -45,10 +44,10 @@ formulario.addEventListener("submit", async function(event) {
         let result = await response.json();
 
         if(response.status == 400){
-               alert(result.msg);
+            alert(result.msg);
            
         }else{
-             alert(result.msg);
+            alert(result.msg);
             window.location.href = './listagem-usuario.php';
         }
     }

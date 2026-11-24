@@ -21,7 +21,7 @@ async function listagemTipo() {
                           <a href="../view/editar-tipo.php?id=${tipo.id_tipo}">EDITAR</a>
                       </div>
                       <div class="vermelho">
-                          <button onclick="deletartipo(${tipo.id_tipo}, this)">EXCLUIR</button>
+                          <button onclick="deletarTipo(${tipo.id_tipo}, this)">EXCLUIR</button>
                       </div>
                   </div>
               </td>
