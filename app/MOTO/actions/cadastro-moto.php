@@ -1,6 +1,6 @@
 <?php
 
-require 'moto.php';
+require '../controller/moto.php';
 
 header('Content-Type: application/json');
 

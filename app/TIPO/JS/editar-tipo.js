@@ -36,8 +36,8 @@ formulario.addEventListener("submit", async function (event) {
 
     try {
         let response = await fetch('../actions/editar-tipo.php', {
-            method : 'POST',
-            body : formData
+            method: 'POST',
+            body: formData
         });
 
         let result = await response.json();

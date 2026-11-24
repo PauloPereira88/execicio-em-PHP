@@ -14,13 +14,13 @@
             <a href="../CARRO/index.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="../MOTO/index1.php"><span>MOTO</span></a>
+            <a href="../../MOTO/view/cadastro-moto.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
-            <a href="index2.php"><span>Tipo</span></a>
+            <a href="./cadastro-tipo.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
-            <a href="../USUARIO/index3.php"><span>Usuario</span></a>
+            <a href="../../USUARIO/view/cadastro-usuario.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
             <a href="../ANIMAL/index4.php"><span>Animal</span></a>
@@ -30,12 +30,7 @@
     <div class="formulario">
         <form id="FormCadastro">
             <label for="tipo">Tipo:</label>
-            <select id="tipo" name="tipo">
-                <option value="van">Vans</option>
-                <option value="micro_onibus">Micro-Onibus</option>
-                <option value="onibus">Onibus</option>
-                <option value="carreta">Carreta</option>
-            </select>
+            <input type="text" id="tipo" name="tipo" placeholder="Tipo de Veiculo">
 
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca" placeholder="Marca do veiculo">
