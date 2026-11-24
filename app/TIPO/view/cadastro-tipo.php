@@ -30,12 +30,7 @@
     <div class="formulario">
         <form id="FormCadastro">
             <label for="tipo">Tipo:</label>
-            <select id="tipo" name="tipo">
-                <option value="van">Vans</option>
-                <option value="micro_onibus">Micro-Onibus</option>
-                <option value="onibus">Onibus</option>
-                <option value="carreta">Carreta</option>
-            </select>
+            <input type="text" id="tipo" name="tipo" placeholder="Tipo de Veiculo" required>
 
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca" placeholder="Marca do veiculo" required>

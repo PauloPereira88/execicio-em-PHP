@@ -9,36 +9,13 @@
 <body>
 
     <h1>Editar Tipo de Veiculo</h1>
-    
-    <!-- <div class="veiculos">
-        <div class="carro">
-            <a href="../CARRO/index.php"><span>CARRO</span></a>
-        </div>
-        <div class="moto">
-            <a href="../MOTO/index1.php"><span>MOTO</span></a>
-        </div>
-        <div class="tipo">
-            <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
-        </div>
-        <div class="usuario">
-            <a href="index3.php"><span>Usuario</span></a>
-        </div>
-        <div class="animal">
-            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
-        </div>
-    </div> -->
 
     <div class="formulario">
         <form id="formEdicaoTipo" action="#" method="POST">
-            <input type="hidden" nome="id_tipo" id="id_tipo">
+            <input type="hidden" name="id_tipo" id="id_tipo">
             
             <label for="tipo">Tipo:</label>
-            <select id="tipo" name="tipo">
-                <option value="van">Vans</option>
-                <option value="micro_onibus">Micro-Onibus</option>
-                <option value="onibus">Onibus</option>
-                <option value="carreta">Carreta</option>
-            </select>
+            <input type="text" id="tipo" name="tipo" placeholder="Tipo de Veiculo">
 
             <label for="marca">Marca:</label>
             <input type="text" id="marca" name="marca" placeholder="Marca do veiculo">
@@ -50,11 +27,10 @@
             <input type="number" id="lugares" name="lugares" placeholder="Quantidade de Lugares">
 
             <div class="butons">
-                <div class="listar">
-                    <a href="./listagem-tipo.php">LISTAR</a>
-                </div>
-                <button type="reset">LIMPAR</button>
-                <button type="submit">ENVIAR</button>
+                <button type="submit" id="salvar" name="salvar">SALVAR</button>
+                <button class="listar">
+                    <a href="../tela-listar.php">LISTAR</a>
+                </button>
             </div>
         </form>
     </div>

@@ -9,24 +9,6 @@
 <body>
 
     <h1>Editar Usuario</h1>
-    
-    <!-- <div class="veiculos">
-        <div class="carro">
-            <a href="../CARRO/index.php"><span>CARRO</span></a>
-        </div>
-        <div class="moto">
-            <a href="../MOTO/index1.php"><span>MOTO</span></a>
-        </div>
-        <div class="tipo">
-            <a href="../ONIBUS/index2.php"><span>Tipo</span></a>
-        </div>
-        <div class="usuario">
-            <a href="index3.php"><span>Usuario</span></a>
-        </div>
-        <div class="animal">
-            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
-        </div>
-    </div> -->
 
     <div class="formulario">
         <form id="formEdicaoUsuario" action="#" method="POST">

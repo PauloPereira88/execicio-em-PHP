@@ -36,4 +36,40 @@ class Tipo {
 
         return $res ? $res->fetch(\PDO::FETCH_ASSOC) : false;
     }
+
+    public function editar() {
+        $db =new Database('tipo');
+
+        $res = $db->update(
+            "id_tipo = '{$this->id_tipo}'",
+            [
+                "tipo" => $this->tipo,
+                "marca" => $this->marca,
+                "modelo" => $this->modelo,
+                "lugares" => $this->lugares
+            ]
+        );
+
+        return $res;
+    }
+
+    public function buscar_por_id($id_tipo) {
+        $db = new Database('tipo');
+
+        $res = $db->select_one_with_where("id_tipo = '{$id_tipo}'");
+
+        if ($res) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
+
+    public function excluir($id_tipo) {
+        $db = new Database('tipo');
+
+        $res = $db->delete("id_tipo = '{$id_tipo}'");
+
+        return $res;
+    }
 }

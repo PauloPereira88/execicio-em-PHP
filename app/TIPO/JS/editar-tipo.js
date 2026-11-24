@@ -34,7 +34,7 @@ formulario.addEventListener("submit", async function (event) {
     const formData = new FormData(formulario);
 
     try {
-        let response = await fetchem('../actions/editar-tipo.php', {
+        let response = await fetch('../actions/editar-tipo.php', {
             method: 'POST',
             body: formData
         });
