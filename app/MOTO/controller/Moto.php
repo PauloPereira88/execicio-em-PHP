@@ -49,4 +49,24 @@ class Moto {
         
         return $res;
     }
+
+    public function buscar_por_id($id_moto) {
+        $db = new Database('moto');
+
+        $res = $db->select_one_with_where("id_moto = '{$id_moto}'");
+
+        if ($res) {
+            return $res;
+        } else {
+            return false;
+        }
+    }
+
+    public function excluir($id_moto) {
+        $db = new Database('moto');
+
+        $res = $db->delete("id_moto = '{$id_moto}'");
+
+        return $res;
+    }
 }

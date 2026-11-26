@@ -3,7 +3,7 @@
 class Database {
     private $conn;
     private string $host = 'localhost';
-    private string $db = 'veiculo';
+    private string $db = 'cadastros';
     private string $user = 'root';
     private string $pass = '';
     private $table;
@@ -43,7 +43,7 @@ class Database {
             $fields = array_keys($values);
             $binds = array_fill(0, count($fields), '?');
 
-            $query = "INSERT INTO " . $this->table . " (" . implode(',', $fields) . " ) VALUES ( " . implode(',', $binds) . " )";
+            $query = 'INSERT INTO ' . $this->table . ' (' . implode(',', $fields) . ' ) VALUES ( ' . implode(',', $binds) . ' )';
 
             $res = $this->execute($query, array_values($values));
 

@@ -4,15 +4,17 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
     const formData = new FormData(this);
 
     try {
-        const response = await fetch('cadastrarcarro.php', {
+        const response = await fetch('../actions/cadastro-carro.php', {
             method: 'POST',
             body: formData
         });
 
         const resultado = await response.json();
         alert(resultado.message);
+        window.location.href = './listagem-carro.php';
+
     } catch (error) {
-        alert ("Erro na Requisicao");
-        console.log(error);
+        console.error("Erro na Requisição:", error);
+        alert("Erro na Requisição. Verifique a conexão com o servidor.");
     }
-})
+});

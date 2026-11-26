@@ -62,6 +62,64 @@ class Database {
         $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
         return $dados;
     }
+
+    public function update($where, $data) {
+        try {
+            $data = array_keys($data);
+
+            $sets = implode('=?, ', $data) . '=?';
+
+            $query = "UPDATE " . $this->table . " SET " . $sets . " WHERE " . $where;
+
+            $res = $this->execute($query, array_values($data));
+
+            return $res ? true : false;
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
+
+    public function select_all_with_where($where = "", $fields = "*") {
+        try {
+            $query = "SELECT {$fields} FROM {$this->table}";
+
+            if (!empyt($where)) {
+                $query .= " WHERE {$where}";
+            }
+            $query .= ";";
+
+            $res = $this->execute($query);
+            return $res ? $res->fetchAll(\PDO::fETCH_ASSOC) : [];
+        } catch (\Throwable $th) {
+            throw $th;
+        }
+    }
+
+    public function select_one_with_where($where = "", $fields = "*") {
+        $query = "SELECT {$fields} FROM {$this->table}";
+        if (!empty($where)) {
+            $query .= " WHERE {$where}";
+        }
+        $query .= ";";
+
+        $res = $this->execute($query);
+        return $res ? $res->fetch (PDO::FETCH_ASSOC) : false;
+    }
+
+    public function delete($id_tratado) {
+        try {
+            $query = "DELETE FROM " . $this->table . " WHERE " . $id_tratado;
+            $res = $this->execute($query);
+
+            if ($res) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (\Throwable $th) {
+            return false;
+        }
+    }
 }
 
 ?>

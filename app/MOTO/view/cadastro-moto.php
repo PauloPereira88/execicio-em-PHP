@@ -30,13 +30,13 @@
     <div class="formulario">
         <form id="FormCadastro">
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca da Moto">
+            <input type="text" name="marca" placeholder="Marca da Moto" required>
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo da Moto">
+            <input type="text" name="modelo" placeholder="Modelo da Moto" required>
 
             <label for="placa">Placa:</label>
-            <input type="text" name="placa" placeholder="placa da Moto">
+            <input type="text" name="placa" placeholder="placa da Moto" required>
 
             <div class="butons">
                 <div class="listar">

@@ -1,6 +1,6 @@
 <?php
 
-require 'db.php';
+require '../model/Database.php';
 
 class Carro {
     public int $id;

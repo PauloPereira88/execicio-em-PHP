@@ -15,13 +15,13 @@
             <input type="hidden" name="id_moto" id="id_moto">
             
             <label for="marca">Marca:</label>
-            <input type="text" name="marca" placeholder="Marca da Moto">
+            <input type="text" id="marca" name="marca" placeholder="Marca da Moto">
 
             <label for="modelo">Modelo:</label>
-            <input type="text" name="modelo" placeholder="Modelo da Moto">
+            <input type="text" id="modelo" name="modelo" placeholder="Modelo da Moto">
 
             <label for="placa">Placa:</label>
-            <input type="text" name="placa" placeholder="placa da Moto">
+            <input type="text" id="placa" name="placa" placeholder="placa da Moto">
 
             <div class="butons">
                 <button type="submit" id="salvar" name="salvar">SALVAR</button>

@@ -17,10 +17,10 @@ async function listagemMoto() {
         <td>
             <div class="buttons">
                 <div class="verde">
-                    <a href="../view/editar-moto.php?id=${moto.id_moto}">EDITAR</a>
+                  <a href="../view/editar-moto.php?id=${moto.id_moto}">EDITAR</a>
                 </div>
                 <div class="vermelho">
-                    <button onclick="deletarMoto(${moto.id_moto}, this)">EXCLUIR</button>
+                  <button onclick="deletarMoto(${moto.id_moto}, this)">EXCLUIR</button>
                 </div>
             </div>
         </td>
