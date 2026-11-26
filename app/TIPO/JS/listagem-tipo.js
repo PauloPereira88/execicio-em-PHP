@@ -1,38 +1,38 @@
 async function listagemTipo() {
-    try {
-        const resposta = await fetch('../actions/listagem-tipo.php');
-        const tipos = await resposta.json();
+  try {
+    const resposta = await fetch('../actions/listagem-tipo.php');
+    const tipos = await resposta.json();
 
-        const bodyTable = document.getElementById("bodyTable");
-        bodyTable.innerHTML = "";
+    const bodyTable = document.getElementById("bodyTable");
+    bodyTable.innerHTML = "";
 
-        tipos.forEach((tipo) => {
-            const tr = document.createElement("tr");
+    tipos.forEach((tipo) => {
+      const tr = document.createElement("tr");
 
-            tr.innerHTML = `
-              <td nowrap>${tipo.id_tipo}</td>
-              <td nowrap>${tipo.tipo ?? ""}</td>
-              <td nowrap>${tipo.marca ?? ""}</td>
-              <td nowrap>${tipo.modelo ?? ""}</td>
-              <td nowrap>${tipo.lugares ?? ""}</td>
-              <td>
-                  <div class="buttons">
-                      <div class="verde">
-                          <a href="../view/editar-tipo.php?id=${tipo.id_tipo}">EDITAR</a>
-                      </div>
-                      <div class="vermelho">
-                          <button onclick="deletarTipo(${tipo.id_tipo}, this)">EXCLUIR</button>
-                      </div>
-                  </div>
-              </td>
-            `;
+      tr.innerHTML = `
+        <td nowrap>${tipo.id_tipo}</td>
+        <td nowrap>${tipo.tipo ?? ""}</td>
+        <td nowrap>${tipo.marca ?? ""}</td>
+        <td nowrap>${tipo.modelo ?? ""}</td>
+        <td nowrap>${tipo.lugares ?? ""}</td>
+        <td>
+            <div class="buttons">
+                <div class="verde">
+                    <a href="../view/editar-tipo.php?id=${tipo.id_tipo}">EDITAR</a>
+                </div>
+                <div class="vermelho">
+                    <button onclick="deletarTipo(${tipo.id_tipo}, this)">EXCLUIR</button>
+                </div>
+            </div>
+        </td>
+      `;
 
-            bodyTable.appendChild(tr);
-        });
+      bodyTable.appendChild(tr);
+    });
 
-    } catch (error) {
-      console.error("Erro ao Carregar Lista:", error);
-    }
+  } catch (error) {
+    console.error("Erro ao Carregar Lista:", error);
+  }
 }
 
 async function deletarTipo(id, botao) {

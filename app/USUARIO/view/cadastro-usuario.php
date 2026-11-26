@@ -11,7 +11,7 @@
     <h1>Cadastro de Usuarios</h1>
     <div class="veiculos">
         <div class="carro">
-            <a href="../../CARRO/index.php"><span>CARRO</span></a>
+            <a href="../../CARRO/view/cadastro-carro.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
             <a href="../../MOTO/view/cadastro-moto.php"><span>MOTO</span></a>
@@ -23,7 +23,7 @@
             <a href="cadastro-usuario.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
-            <a href="../../ANIMAL/index4.php"><span>Animal</span></a>
+            <a href="../../ANIMAL/view/cadastro-animal.php"><span>Animal</span></a>
         </div>
     </div>
 

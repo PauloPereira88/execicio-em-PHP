@@ -17,7 +17,7 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
         }
 
     } catch (error) {
-        console.error("Erro na requisição:", error);
-        alert("Erro na requisição. Verifique a conexão com o servidor.");
+        console.error("Erro na Requisição:", error);
+        alert("Erro na Requisição. Verifique a conexão com o servidor.");
     }
 });

@@ -11,9 +11,13 @@ document.getElementById("FormCadastro").addEventListener('submit', async functio
 
         const resultado = await response.json();
         alert(resultado.message);
-        window.location.href = './listagem-moto.php';
+
+        if (resultado.success) {
+            window.location.href = './listagem-moto.php';
+        }
 
     } catch (error) {
-        alert ("Erro na Requisicao");
+        console.error("Erro na Requisição:", error);
+        // alert("Erro na Requisição. Verifique a conexão com o servidor.");
     }
 });

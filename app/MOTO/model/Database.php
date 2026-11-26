@@ -3,7 +3,7 @@
 class Database {
     private $conn;
     private string $host = 'localhost';
-    private string $db = 'veiculo';
+    private string $db = 'cadastros';
     private string $user = 'root';
     private string $pass = '';
     private $table;
@@ -53,6 +53,14 @@ class Database {
             print_r($th->getMessage());
             echo "</pre>";
         }
+    }
+
+    public function select($fields = '*') {
+        $query = "SELECT " . $fields . " FROM " . $this->table . ";";
+        $res = $this->execute($query);
+
+        $dados = $res->fetchAll(\PDO::FETCH_ASSOC);
+        return $dados;
     }
 }
 

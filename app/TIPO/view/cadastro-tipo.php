@@ -11,19 +11,19 @@
     <h1>Cadastro de Veiculos PESADOS</h1>
     <div class="veiculos">
         <div class="carro">
-            <a href="../CARRO/index.php"><span>CARRO</span></a>
+            <a href="../../CARRO/view/cadastro-carro.php"><span>CARRO</span></a>
         </div>
         <div class="moto">
-            <a href="../MOTO/index1.php"><span>MOTO</span></a>
+            <a href="../../MOTO/view/cadastro-moto.php"><span>MOTO</span></a>
         </div>
         <div class="tipo">
             <a href="cadastro-tipo.php"><span>Tipo</span></a>
         </div>
         <div class="usuario">
-            <a href="../USUARIO/index3.php"><span>Usuario</span></a>
+            <a href="../../USUARIO/view/cadastro-usuario.php"><span>Usuario</span></a>
         </div>
         <div class="animal">
-            <a href="../ANIMAL/index4.php"><span>Animal</span></a>
+            <a href="../../ANIMAL/view/cadastro-animal.php"><span>Animal</span></a>
         </div>
     </div>
 
@@ -51,6 +51,6 @@
         </form>
     </div>
     
-    <script src="../JS/cadastro-tipo.js"></script>
+    <script defer src="../JS/cadastro-tipo.js"></script>
 </body>
 </html>

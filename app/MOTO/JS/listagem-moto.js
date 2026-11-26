@@ -1,37 +1,37 @@
 async function listagemMoto() {
-    try {
-        const resposta = await fetch('../actions/listagem-moto.php');
-        const motos = await resposta.json();
+  try {
+    const resposta = await fetch('../actions/listagem-moto.php');
+    const motos = await resposta.json();
 
-        const bodyTable = document.getElementById("bodyTable");
-        bodyTable.innerHTML = "";
+    const bodyTable = document.getElementById("bodyTable");
+    bodyTable.innerHTML = "";
 
-        motos.forEach((moto) => {
-            const tr = document.createElement("tr");
+    motos.forEach((moto) => {
+      const tr = document.createElement("tr");
 
-            tr.innerHTML = `
-              <td nowrap>${moto.id_moto}</td>
-              <td nowrap>${moto.marca ?? ""}</td>
-              <td nowrap>${moto.modelo ?? ""}</td>
-              <td nowrap>${moto.placa ?? ""}</td>
-              <td>
-                  <div class="buttons">
-                      <div class="verde">
-                          <a href="../view/editar-moto.php?id=${moto.id_moto}">EDITAR</a>
-                      </div>
-                      <div class="vermelho">
-                          <button onclick="deletarMoto(${moto.id_moto}, this)">EXCLUIR</button>
-                      </div>
-                  </div>
-              </td>
-            `;
+      tr.innerHTML = `
+        <td nowrap>${moto.id_moto}</td>
+        <td nowrap>${moto.marca ?? ""}</td>
+        <td nowrap>${moto.modelo ?? ""}</td>
+        <td nowrap>${moto.placa ?? ""}</td>
+        <td>
+            <div class="buttons">
+                <div class="verde">
+                    <a href="../view/editar-moto.php?id=${moto.id_moto}">EDITAR</a>
+                </div>
+                <div class="vermelho">
+                    <button onclick="deletarMoto(${moto.id_moto}, this)">EXCLUIR</button>
+                </div>
+            </div>
+        </td>
+      `;
 
-            bodyTable.appendChild(tr);
-        });
+      bodyTable.appendChild(tr);
+    });
 
-    } catch (error) {
-        console.error("Erro ao Carregar Lista:", error);
-    }
+  } catch (error) {
+    console.error("Erro ao Carregar Lista:", error);
+  }
 }
 
 async function deletarMoto(id, botao) {
