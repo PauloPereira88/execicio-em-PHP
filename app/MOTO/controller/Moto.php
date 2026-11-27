@@ -4,9 +4,9 @@ require '../model/Database.php';
 
 class Moto {
     public ?int $id_moto = null;
-    public string $marca;
-    public string $modelo;
-    public string $placa;
+    public string $marca = '';
+    public string $modelo = '';
+    public string $placa = '';
 
     public function cadastrar() {
         $db = new Database('moto');

@@ -65,14 +65,13 @@ class Database {
 
     public function update($where, $data) {
         try {
-            $data = array_keys($data);
+            $fields = array_keys($data);
 
-            $sets = implode('=?, ', $data) . '=?';
+            $sets = implode('=?, ', $fields) . '=?';
 
             $query = "UPDATE " . $this->table . " SET " . $sets . " WHERE " . $where;
 
             $res = $this->execute($query, array_values($data));
-
             return $res ? true : false;
         } catch (\Throwable $th) {
             return false;
